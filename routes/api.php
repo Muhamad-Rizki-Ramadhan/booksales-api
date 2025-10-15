@@ -1,5 +1,7 @@
 <?php
-
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\AuthorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/books', [BookController::class, 'index']);
+Route::get('/genre', [GenreController::class, 'index']);
+Route::get('/author', [AuthorController::class, 'index']);
