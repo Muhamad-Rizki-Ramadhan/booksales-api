@@ -2,15 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daftar Penulis</title>
 </head>
 <body>
-    <h1>Daftar Author</h1>
-    <ul>
-        @foreach ($authors as $author)
-            <li>{{ $author['id'] }} - {{ $author['name'] }} ({{ $author['country'] }})</li>
-        @endforeach
-    </ul>
+    <h1>Daftar Penulis (Authors)</h1>
+    @if($authors->isEmpty())
+        <p>Tidak ada data penulis ditemukan.</p>
+    @else
+        <table border="1" cellpadding="10" cellspacing="0" width="60%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Negara</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($authors as $author)
+                    <tr>
+                        <td>{{ $author->id }}</td>
+                        <td>{{ $author->name }}</td>
+                        <td>{{ $author->country }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endif
 </body>
 </html>
