@@ -16,14 +16,15 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
         $table->id();
         $table->string('title');
+        $table->text('description')->nullable();
+        $table->decimal('price', 10, 2);
         $table->integer('stock');
-        $table->integer('price');
-        $table->string('cover_photo');
-        $table->text('description');
+        $table->string('cover_photo')->nullable();
+        $table->unsignedBigInteger('genre_id')->nullable();
         $table->unsignedBigInteger('author_id');
-        $table->timestamps();
 
         $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
+        $table->timestamps();
     });
     }
 
