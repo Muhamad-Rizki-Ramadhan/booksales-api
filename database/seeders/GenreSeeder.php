@@ -15,10 +15,27 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        Genre::create(['name' => 'Action']);
-        Genre::create(['name' => 'Romance']);
-        Genre::create(['name' => 'Fantasy']);
-        Genre::create(['name' => 'Horror']);
-        Genre::create(['name' => 'Comedy']);
+        Genre::insert([
+            [
+                'name' => 'Fantasy',
+                'description' => 'Cerita yang mengandung elemen magis, dunia imajinatif, atau makhluk mitologi.'
+            ],
+            [
+                'name' => 'Science Fiction',
+                'description' => 'Bercerita tentang masa depan, teknologi, luar angkasa, atau eksperimen ilmiah.'
+            ],
+            [
+                'name' => 'Mystery',
+                'description' => 'Fokus pada pemecahan teka-teki, misteri, atau kasus kejahatan.'
+            ],
+            [
+                'name' => 'Romance',
+                'description' => 'Berisi kisah cinta dan hubungan emosional antar karakter.'
+            ],
+            [
+                'name' => 'Horror',
+                'description' => 'Cerita menegangkan dan menyeramkan yang membangkitkan rasa takut.'
+            ],
+        ]);
     }
 }
