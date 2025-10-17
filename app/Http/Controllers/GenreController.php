@@ -10,10 +10,15 @@ class GenreController extends Controller
     public function index()
     {
         $genres = Genre::all();
-        return response()->json($genres, 200);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'List of Genres',
+            'data' => $genres
+        ], 200);
     }
 
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -25,5 +30,5 @@ class GenreController extends Controller
             'message' => 'Genre Berhasil ditambah',
             'data' => $genre
         ], 201);
-    }
+    }*/
 }
