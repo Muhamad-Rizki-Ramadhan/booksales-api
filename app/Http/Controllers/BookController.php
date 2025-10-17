@@ -20,7 +20,7 @@ class BookController extends Controller
             'data' => $books
         ], 200);
     }
-    /*public function store(Request $request)
+    public function store(Request $request)
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
@@ -39,5 +39,5 @@ class BookController extends Controller
             'message' => 'Book created successfully',
             'data' => $book
         ], 201);
-    }*/
+    }
 }
