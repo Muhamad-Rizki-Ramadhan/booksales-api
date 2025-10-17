@@ -17,7 +17,7 @@ class AuthorController extends Controller
         ], 200);
     }
 
-    /*public function store(Request $request)
+    public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -32,5 +32,5 @@ class AuthorController extends Controller
             'message' => 'Author created successfully',
             'data' => $author
         ], 201);
-    }*/
+    }
 }
