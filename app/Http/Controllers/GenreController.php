@@ -18,7 +18,7 @@ class GenreController extends Controller
         ], 200);
     }
 
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -30,5 +30,5 @@ class GenreController extends Controller
             'message' => 'Genre Berhasil ditambah',
             'data' => $genre
         ], 201);
-    }
+    }*/
 }
