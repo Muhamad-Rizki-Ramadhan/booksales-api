@@ -32,9 +32,9 @@ Route::apiResource('books', BookController::class)->only(['index', 'show']);
 
 Route::middleware(['auth:api'])->group(function () {
     Route::middleware(['role:admin'])->group(function () {
-    Route::apiResource('genres', GenreController::class)->only(['stoer', 'update', 'destroy']);
-    Route::apiResource('authors', AuthorController::class)->only(['stoer', 'update', 'destroy']);
-    Route::apiResource('books', BookController::class)->only(['stoer', 'update', 'destroy']);
+    Route::apiResource('genres', GenreController::class)->only(['store', 'update', 'destroy']);
+    Route::apiResource('authors', AuthorController::class)->only(['store', 'update', 'destroy']);
+    Route::apiResource('books', BookController::class)->only(['store', 'update', 'destroy']);
     });
 });
 
